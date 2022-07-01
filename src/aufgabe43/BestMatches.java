@@ -1,6 +1,9 @@
 package aufgabe43;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.HashMap;
+import java.util.Map;
 
 public class BestMatches{
 
@@ -61,6 +64,16 @@ public class BestMatches{
         public void increaseWishScore() {
                 wishScore++;
         }
-
-        //maybe add an output here
+        @Override
+        public String toString() {
+                //StringBuilder result = new StringBuilder("######Here are your best matches:######");
+                System.out.println("######Here are your best matches######");
+                for (Map.Entry<Riders, Horse> matches : matchMap.entrySet()) {
+                        System.out.println(matches.getKey().toString() + " and so he got the Horse " + matches.getValue().toString() + " from his wishlist");
+                        //result.append(String.format(" %10s -> %-10s\n", matches.getKey().getName(), matches.getValue().getNameP()));
+                }
+                //result.append(String.format("With ", wishScore, "fulfilled wishes"));
+                System.out.println("With " +  wishScore + " fulfilled wishes");
+                return null;
+        }
 }

@@ -22,6 +22,11 @@ public class Horse {
         this.skillLevel = skillLevel;
     }
 
+    @Override
+    public String toString() {
+        String horse = getNameP() + " with the skill " + getSkillLevel() + ".";
+        return horse;
+    }
     /**
      * The getter method for the horses' skill level.
      * @return The horses' skillLevel.
